@@ -1,0 +1,11 @@
+extends layout
+
+block scripts
+  script(type="text/javascript" src="/js/helpers/url.js")
+  script(type="text/javascript" src="/js/foo.js")
+
+block content
+  h1= title
+  p Welcome to #{title}
+  pre Server-generated URL: #{url('ahoy')}
+  pre#client-url
