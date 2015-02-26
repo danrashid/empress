@@ -22,12 +22,8 @@ module.exports = function(grunt) {
         }
       }
     },
-    jasmine: {
-      dist: {
-        options: {
-          specs: 'spec/**/*Spec.js'
-        }
-      }
+    jasmine_node: {
+      all: ['spec/']
     },
     jshint: {
       src: sources.jshint
@@ -55,10 +51,10 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-jasmine-node');
 
-  grunt.registerTask('default', ['jade', 'jasmine', 'jshint', 'sass']);
+  grunt.registerTask('default', ['jade', 'jasmine_node', 'jshint', 'sass']);
 };
